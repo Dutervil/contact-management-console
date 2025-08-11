@@ -3,6 +3,7 @@ package serviceimpl;
 import dao.FileDao;
 import model.Contact;
 import service.ContactService;
+import utils.AppUtils;
 
 import java.util.List;
 import java.util.UUID;
@@ -18,6 +19,10 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public void saveContact(Contact contact) {
+
+        if (contact.getId() == null) {
+            throw new IllegalArgumentException("Id must not be null");
+        }
         fileDao.saveFile(contact);
     }
 

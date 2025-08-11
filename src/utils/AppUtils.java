@@ -4,6 +4,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Map;
+import java.util.Random;
 
 import static constant.AppConstant.FILE_PATH;
 
@@ -22,6 +24,13 @@ public class AppUtils {
                 writer.newLine();
             }
         }
+    }
+
+
+
+    public static Integer generateId() {
+      Random random = new Random();
+      return random.nextInt(100);
     }
 
 
